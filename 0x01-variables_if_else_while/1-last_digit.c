@@ -8,12 +8,11 @@
 int result(int a, int n)
 {
 	if (a > 5)
-		printf("Last digit of %d is %d and is greater than 5", n, a);
+		printf("Last digit of %d is %d and is greater than 5\n", n, a);
 	else if (a == 0)
-		printf("Last digit of %d is %d and is 0", n, a);
+		printf("Last digit of %d is %d and is 0\n", n, a);
 	else
-		printf("Last digit of %d is %d and is less than 6 and not 0", n, a);
-	return (0);
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, a);
 }
 int main(void)
 {
@@ -29,7 +28,7 @@ int main(void)
 	else if (n < 0)
 	{
 		int b = 0 - n;
-		int a = b % 10;
+		int a = -(b % 10);
 		result(a, n);
 	}
 	return (0);
