@@ -5,7 +5,7 @@
  * main - solve task 1
  * Return: Always 0
  */
-int result(a)
+int result(int a, int n)
 {
 	if (a > 5)
 		printf("Last digit of %d is %d and is greater than 5", n, a);
@@ -24,13 +24,13 @@ int main(void)
 	if (n > 0)
 	{
 		int a = n % 10;
-		result(a);
+		result(a, n);
 	}
 	else if (n < 0)
 	{
 		int b = 0 - n;
 		int a = b % 10;
-		result(a);
+		result(a, n);
 	}
 	return (0);
 }
