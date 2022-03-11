@@ -5,12 +5,10 @@
  */
 int main(void)
 {
-	char arr[] = "abcdefghijklmnopqrstuvwxyz";
+	char ltr;
 
-	int i;
-
-	for (i = 0; i < 27; i++)
-	putchar(arr[i]);
+	for (ltr = "a"; ltr <= "z"; ltr++)
+	putchar(ltr);
 
 	putchar('\n');
 
