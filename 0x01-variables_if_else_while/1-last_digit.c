@@ -4,9 +4,13 @@
 /**
  * main - get the last digit and call function result
  * Return: Always 0
- * result - checks the number and prints
- * a: answer parameter
- * n: input number
+ */
+/**
+ * result - this checks the modulus result and print the right answer
+ * @a: the result integer
+ * @n: the input number
+ *
+ * Return: Always 0
  */
 int result(int a, int n)
 {
@@ -27,15 +31,16 @@ int main(void)
 	if (n > 0)
 	{
 		int a = n % 10;
+
 		result(a, n);
 	}
-
 	else if (n < 0)
 	{
 		int b = 0 - n;
+
 		int a = -(b % 10);
+
 		result(a, n);
 	}
-
 	return (0);
 }
