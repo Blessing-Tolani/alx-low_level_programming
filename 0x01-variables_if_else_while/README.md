@@ -1,1 +1,1 @@
-directory that solves task on using if,else, while
+directory that solves task using if,else,while
