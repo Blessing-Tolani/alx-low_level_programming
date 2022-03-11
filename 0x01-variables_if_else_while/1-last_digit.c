@@ -3,8 +3,6 @@
 #include <stdio.h>
 /**
  * main - get the last digit and call function result
- * Return: Always 0
- *
  * result - this checks the modulus result and print the right answer
  * @a: the result integer
  * @n: the input number
