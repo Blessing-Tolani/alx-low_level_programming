@@ -2,7 +2,6 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * main - get the last digit and call function result
  * result - this checks the modulus result and print the right answer
  * @a: the result integer
  * @n: the input number
@@ -19,6 +18,10 @@ int result(int a, int n)
 		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, a);
 	return (0);
 }
+/**
+ * main - gets the modulus and call function result
+ * Return: Always 0
+ */
 int main(void)
 {
 	int n;
