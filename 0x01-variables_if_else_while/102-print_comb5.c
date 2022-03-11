@@ -6,6 +6,7 @@
 int main(void)
 {
 	int i, j, k, m;
+
 	for (i = '0'; i <= '9'; i++)
 	{
 		for (j = '0'; j <= '8'; j++)
@@ -16,10 +17,10 @@ int main(void)
 				{
 					putchar(i);
 					putchar(j);
-					putchar(' ')
+					putchar(' ');
 					putchar(k);
-					putchar(m)
-					if (i == '9' && j == '8' && k == '9' && 					m == "9")
+					putchar(m);
+					if (i == k == m '9' && j == '8')
 					continue;
 					putchar(',');
 					putchar(' ');
