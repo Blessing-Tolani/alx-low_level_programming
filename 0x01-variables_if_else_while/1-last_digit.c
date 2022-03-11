@@ -2,8 +2,11 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * main - solve task 1
+ * main - get the last digit and call function result
  * Return: Always 0
+ * result - checks the number and prints
+ * a: answer parameter
+ * n: input number
  */
 int result(int a, int n)
 {
@@ -26,11 +29,13 @@ int main(void)
 		int a = n % 10;
 		result(a, n);
 	}
+
 	else if (n < 0)
 	{
 		int b = 0 - n;
 		int a = -(b % 10);
 		result(a, n);
 	}
+
 	return (0);
 }
