@@ -1,7 +1,8 @@
 #include <stdio.h>
-/* 
- * Prints predefined text
- * returns 0
+
+/** 
+ *Prints predefined text
+ *returns 0
  */
 int main(void)
 {
