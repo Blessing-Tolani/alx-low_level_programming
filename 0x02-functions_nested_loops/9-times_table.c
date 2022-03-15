@@ -26,8 +26,8 @@ void times_table(void)
 			_putchar(',');
 			_putchar(' ');
 			if ((ans > 7 && (a == 2 || a == 3 )) || (a >= 4 && ans >= 5))
-			else
-				_putchar(' ');
+				continue;
+			_putchar(' ');
 		}
 		_putchar('\n');
 	}
