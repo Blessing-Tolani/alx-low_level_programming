@@ -10,31 +10,12 @@
  */
 int print_last_digit(int n)
 {
-	char s1[20];
-	char s2[20];
+	n = (n % 10);
 
-	int double_last_digit;
-
-	if (n >= 0)
+	if (n < 0)
 	{
-		int last_digit = n % 10;
-
-		sprintf(s1,"%d", last_digit);
-		strcpy(s2, s1);
-		strcat(s1, s2);
-		double_last_digit = atoi(s1);
-
+		n = -n;
 	}
-	else if (n < 0)
-	{
-		int a = 0-n;
-		int last_digit = a % 10;
-
-		sprintf(s1,"%d", last_digit);
-		strcpy(s2, s1);
-		strcat(s1, s2);
-		double_last_digit = atoi(s1);
-	
-	}
-	return (double_last_digit);
+	_putchar(n + '0');
+	return (n);
 }
