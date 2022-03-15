@@ -20,7 +20,7 @@ int print_last_digit(int n)
 		int last_digit = n % 10;
 
 		sprintf(s1,"%d", last_digit);
-		s2 = s1;
+		strcpy(s2, s1);
 		strcat(s1, s2);
 		double_last_digit = atoi(s1);
 
@@ -31,7 +31,7 @@ int print_last_digit(int n)
 		int last_digit = a % 10;
 
 		sprintf(s1,"%d", last_digit);
-		s2 = s1;
+		strcpy(s2, s1);
 		strcat(s1, s2);
 		double_last_digit = atoi(s1);
 	
