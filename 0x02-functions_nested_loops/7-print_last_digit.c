@@ -10,7 +10,7 @@
  */
 int print_last_digit(int n)
 {
-	int s1;
+	char s1;
 
 	int double_last_digit;
 
