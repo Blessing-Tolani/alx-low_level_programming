@@ -25,10 +25,10 @@ void times_table(void)
 				continue;
 			_putchar(',');
 			_putchar(' ');
-			if (a == 0 || a == 1 || a >= 4 && ans >= 5)
-				putchar(' ');
-			else if (a == 2 && ans > 7 || a == 3 && ans > 7)
-				putchar(' ');
+			if (a == 0 || a == 1 || (a >= 4 && ans >= 5))
+				_putchar(' ');
+			else if (ans > 7 && (a == 2 || a == 3))
+				_putchar(' ');
 		}
 		_putchar('\n');
 	}
