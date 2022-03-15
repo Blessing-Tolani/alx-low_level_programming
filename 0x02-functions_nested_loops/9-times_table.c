@@ -16,7 +16,7 @@ void times_table(void)
 
 			if (ans < 10)
 				_putchar((ans % 10) + '0');
-			else if (ans > 10)
+			if (ans >= 10)
 			{
 				_putchar((ans / 10) + '0');
 				_putchar((ans % 10) + '0');
@@ -25,6 +25,10 @@ void times_table(void)
 				continue;
 			_putchar(',');
 			_putchar(' ');
+			if (a == 0 || a == 1 || a >= 4 && ans >= 5)
+				putchar(' ');
+			else if (a == 2 && ans > 7 || a == 3 && ans > 7)
+				putchar(' ');
 		}
 		_putchar('\n');
 	}
