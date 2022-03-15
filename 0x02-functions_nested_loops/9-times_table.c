@@ -14,7 +14,13 @@ void times_table(void)
 		{
 			int ans = a * b;
 
-			_putchar((ans % 100) + '0');
+			if (ans < 10)
+				_putchar((ans % 10) + '0');
+			else if (ans > 10)
+			{
+				_putchar((ans / 10) + '0');
+				_putchar((ans % 10) + '0');
+			}
 			if (b == 9)
 				continue;
 			_putchar(',');
