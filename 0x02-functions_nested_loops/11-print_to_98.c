@@ -13,16 +13,18 @@ void output(int a)
 		_putchar(((a / 10) % 10) + '0');
 		_putchar((a % 10)  + '0');
 	}
-	else if (a <= 99 && a >= 10)
+	if (a <= 99 && a >= 10)
 	{
 		_putchar((a / 10) + '0');
 		_putchar((a % 10) + '0');
 	}
-	else
+	else if (a < 10)
 		_putchar(a + '0');
-	_putchar(',');
-	_putchar(' ');
-
+	else if ( a != 98)
+	{
+		_putchar(',');
+		_putchar(' ');
+	}
 }
 /**
  * add - adds two integers and returns the result
@@ -35,7 +37,7 @@ void print_to_98(int n)
 {
 	int a;
 
-	if (n > 98)
+	if (n >= 98)
 	{
 		for (a = n; a >= 98; a--)
 		{
