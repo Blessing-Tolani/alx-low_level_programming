@@ -19,8 +19,8 @@ int main(void)
 	for (a = 1; a <= 50; a++)
 	{
 		int thirdDigit = secondDigit + firstDigit;
-		printf("thirdDigit");
 		printf(", ");
+		printf("%d", thirdDigit);
 		firstDigit = secondDigit;
 		secondDigit = thirdDigit;
 	}
