@@ -19,6 +19,7 @@ int main(void)
 	for (a = 1; a <= 48; a++)
 	{
 		unsigned long thirdDigit = secondDigit + firstDigit;
+
 		printf(", ");
 		printf("%ld", thirdDigit);
 		firstDigit = secondDigit;
