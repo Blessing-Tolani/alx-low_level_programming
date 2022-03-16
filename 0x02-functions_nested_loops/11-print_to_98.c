@@ -18,20 +18,17 @@ void output(int a)
 		_putchar((a / 10) + '0');
 		_putchar((a % 10) + '0');
 	}
-	else if (a < 10)
+	if (a < 10)
 		_putchar(a + '0');
-	else if ( a != 98)
-	{
-		_putchar(',');
-		_putchar(' ');
-	}
+	if (a == 98)
+		continue;
+	_putchar(',');
+	_putchar(' ');
 }
 /**
- * add - adds two integers and returns the result
- * @a: the first integer
- * @b: the second integer
+ * print_to_98 - print natural numbers from n to 98
+ * @n: the specified n
  *
- * Return: returns the addition result
  */
 void print_to_98(int n)
 {
@@ -46,7 +43,6 @@ void print_to_98(int n)
 	}
 	if (n == 0)
 	{
-		
 	}
 	else if (n < 98)
 	{
