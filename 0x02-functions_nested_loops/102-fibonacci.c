@@ -9,19 +9,19 @@ int main(void)
 {
 	int a;
 
-	int firstDigit = 1;
+	unsigned long firstDigit = 1;
 
-	int secondDigit = 2;
+	unsigned long secondDigit = 2;
 
 	printf("%d", firstDigit);
 	printf(", ");
 	printf("%d", secondDigit);
 	for (a = 1; a <= 48; a++)
 	{
-		long thirdDigit = secondDigit + firstDigit;
-
+		unsigned long thirdDigit = secondDigit + firstDigit;
+	
 		printf(", ");
-		printf("%ld", thirdDigit);
+		printf("%lu", thirdDigit);
 		firstDigit = secondDigit;
 		secondDigit = thirdDigit;
 	}
