@@ -16,9 +16,10 @@ int main(void)
 	printf("%d", firstDigit);
 	printf(", ");
 	printf("%d", secondDigit);
-	for (a = 1; a <= 50; a++)
+	for (a = 1; a <= 48; a++)
 	{
 		int thirdDigit = secondDigit + firstDigit;
+
 		printf(", ");
 		printf("%d", thirdDigit);
 		firstDigit = secondDigit;
