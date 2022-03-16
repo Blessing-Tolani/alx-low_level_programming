@@ -14,7 +14,7 @@ int main(void)
 	int secondDigit = 2;
 
 	printf("%d", firstDigit);
-	printtf(", ");
+	printf(", ");
 	printf("%d", secondDigit);
 	for (a = 1; a <= 50; a++)
 	{
