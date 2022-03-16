@@ -13,15 +13,15 @@ int main(void)
 
 	unsigned long secondDigit = 2;
 
-	printf("%d", firstDigit);
+	printf("%ld", firstDigit);
 	printf(", ");
-	printf("%d", secondDigit);
+	printf("%ld", secondDigit);
 	for (a = 1; a <= 48; a++)
 	{
 		unsigned long thirdDigit = secondDigit + firstDigit;
 	
 		printf(", ");
-		printf("%lu", thirdDigit);
+		printf("%ld", thirdDigit);
 		firstDigit = secondDigit;
 		secondDigit = thirdDigit;
 	}
