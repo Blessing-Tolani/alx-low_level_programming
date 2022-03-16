@@ -33,10 +33,10 @@ void output(int a)
  */
 void print_to_98(int n)
 {
+	int a;
+
 	if (n > 98)
 	{
-		int a;
-
 		for (a = n; a >= 98; a--)
 		{
 			output(a);
@@ -68,5 +68,5 @@ void print_to_98(int n)
 			}
 		}
 	}
-	_putchar('\n')
+	_putchar('\n');
 }
