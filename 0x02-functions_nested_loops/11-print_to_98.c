@@ -7,23 +7,29 @@
  */
 void output(int a)
 {
-	if (a > 99)
+	if (a == 98)
 	{
-		_putchar(((a / 10) / 10) + '0');
-		_putchar(((a / 10) % 10) + '0');
-		_putchar((a % 10)  + '0');
-	}
-	if (a <= 99 && a >= 10)
-	{
-		_putchar((a / 10) + '0');
+		_putchar((a /10) + '0');
 		_putchar((a % 10) + '0');
 	}
-	if (a < 10)
-		_putchar(a + '0');
-	if (a == 98)
-		continue;
-	_putchar(',');
-	_putchar(' ');
+	else
+	{
+		if (a > 99)
+		{
+			_putchar(((a / 10) / 10) + '0');
+			_putchar(((a / 10) % 10) + '0');
+			_putchar((a % 10)  + '0');
+		}
+		if (a <= 99 && a >= 10)
+		{
+			_putchar((a / 10) + '0');
+			_putchar((a % 10) + '0');
+		}
+		if (a < 10)
+			_putchar(a + '0');
+		_putchar(',');
+		_putchar(' ');
+	}
 }
 /**
  * print_to_98 - print natural numbers from n to 98
