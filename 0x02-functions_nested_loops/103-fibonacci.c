@@ -15,7 +15,7 @@ int main(void)
 
 	unsigned long sum = 2;
 
-	for (a = 3; a <= 37; a++)
+	for (a = 3; a <= 32; a++)
 	{
 		unsigned long thirdDigit = secondDigit + firstDigit;
 
@@ -23,7 +23,7 @@ int main(void)
 		secondDigit = thirdDigit;
 		if ((thirdDigit % 2) == 0)
 		{
-			sum = sum + a;
+			sum = sum + thirdDigit;
 		}
 	}
 	printf("%ld", sum);
