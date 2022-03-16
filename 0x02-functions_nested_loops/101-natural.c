@@ -7,13 +7,11 @@
  */
 int main(void)
 {
-	int n = 1024;
-	
 	int a;
 
-	let sum = 0;
+	int sum = 0;
 
-	for (a = 1; a <= 1023; a+=)
+	for (a = 1; a <= 1023; a++)
 	{
 		if ((a % 3 == 0) || (a % 5 == 0))
 		{
@@ -26,4 +24,5 @@ int main(void)
 	}
 	printf("%d", sum);
 	printf("\n");
+	return (0);
 }
