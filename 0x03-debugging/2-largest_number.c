@@ -10,26 +10,26 @@
 
 int largest_number(int a, int b, int c)
 {
-	if (a >= b)
+	if (c >= b)
 	{
-		if (a >= c)
+		if (c >= a)
 		{
-			return (a);
+			return (c);
 		}
         	else
 		{
-            		return (c);
+            		return (a);
         	}
    	}
     	else
 	{
-       		if (b >= c)
+       		if (b >= a)
 		{
             		return (b);
         	}
         	else
 		{
-            		return (c);
+            		return (a);
         	}
     	}
 }
