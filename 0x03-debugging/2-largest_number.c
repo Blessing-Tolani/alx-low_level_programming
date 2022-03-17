@@ -16,20 +16,20 @@ int largest_number(int a, int b, int c)
 		{
 			return (c);
 		}
-        	else
+		else
 		{
-            		return (a);
-        	}
-   	}
-    	else
+			return (a);
+		}
+	}
+	else
 	{
-       		if (b >= a)
+		if (b >= a)
 		{
-            		return (b);
-        	}
-        	else
+			return (b);
+		}
+		else
 		{
-            		return (a);
-        	}
-    	}
+			return (a);
+		}
+	}
 }
