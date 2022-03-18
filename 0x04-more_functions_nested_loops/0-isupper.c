@@ -8,7 +8,7 @@
  */
 int _isupper(int c)
 {
-	int number = isupper(arg);
+	int number = isupper(c);
 
 	if (number > 0)
 		return (1);
