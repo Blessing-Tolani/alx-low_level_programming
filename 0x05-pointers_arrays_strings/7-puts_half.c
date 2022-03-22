@@ -8,13 +8,13 @@
  */
 void puts_half(char *str)
 {
-	int len = strlen(s);
+	int len = strlen(str);
 
 	int c;
 
 	int half = (len % 2 == 0) ? (len / 2) : ((len - 1) / 2) + 1;
 
 	for (c = half; c < len; c++)
-		_putchar(s[c]);
+		_putchar(str[c]);
 	_putchar('\n');
 }
