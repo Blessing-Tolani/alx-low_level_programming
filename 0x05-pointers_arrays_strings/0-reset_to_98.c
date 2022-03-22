@@ -2,7 +2,7 @@
 
 /**
  *reset_to_98 - updates a value
- * @*n: parameter
+ * @n: parameter
  *
  * Return: Always 0
  */
