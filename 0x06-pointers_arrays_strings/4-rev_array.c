@@ -9,7 +9,9 @@
 void reverse_array(int *a, int n)
 {
 	int i;
+
 	int b = n - 1;
+
 	int c;
 
 	i = b;
@@ -39,5 +41,4 @@ void reverse_array(int *a, int n)
 		_putchar((c % 10) + '0');
 		i--;
 	}
-	_putchar('\n');
 }
