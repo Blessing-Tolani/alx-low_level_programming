@@ -18,7 +18,7 @@ void reverse_array(int *a, int n)
 		if (i != b)
 		{
 			_putchar(',');
-			_putchar('  ');
+			_putchar(' fi');
 		}
 		c = a[i];
 		if (c > 10 && c < 99)
