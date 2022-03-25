@@ -37,7 +37,6 @@ void reverse_array(int *a, int n)
 			_putchar(((c / 10) % 10) + '0');
 		}
 		_putchar((c % 10) + '0');
-		
 		i--;
 	}
 }
