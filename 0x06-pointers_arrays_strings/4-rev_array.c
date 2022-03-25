@@ -3,8 +3,6 @@
  * reverse_array - reverses integers in an array
  * @a: array
  * @n: size of array
- *
- * Return: null
  */
 void reverse_array(int *a, int n)
 {
@@ -20,7 +18,7 @@ void reverse_array(int *a, int n)
 		if (i != b)
 		{
 			_putchar(',');
-			_putchar(' ');
+			_putchar('  ');
 		}
 		c = a[i];
 		if (c > 10 && c < 99)
