@@ -2,7 +2,6 @@
 /**
  * leet - Encodes a string to 1337.
  * @str: The string to be encoded.
- *
  * Return: A pointer to the encoded string.
  */
 char *leet(char *str)
@@ -12,11 +11,8 @@ char *leet(char *str)
 	int b;
 	
 	char smallLeet[5] = {'a', 'e', 'o', 't', 'l'};
-	
 	char capLeet[5] = {'A', 'E', 'O', 'T', 'L'};
-	
 	int num[5] = {4, 3, 0, 7, 1};
-	
 	while (str[a])
 	{
 		for (b = 0; b < 5; b++)
