@@ -7,13 +7,9 @@
 char *leet(char *str)
 {
 	int a = 0;
-	
 	int b;
-	
 	char smallLeet[5] = {'a','e','o','t','l'};
-	
 	char capLeet[5] = {'A','E','O','T','L'};
-	
 	int num[5] = {4,3,0,7,1};
 	
 	while (str[a])
