@@ -3,6 +3,8 @@
 /**
  * string_toupper - converts lovercase to uppercase
  * @s: string
+ *
+ * Return: return string
  */
 char *string_toupper(char *s)
 {
