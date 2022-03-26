@@ -7,37 +7,13 @@
  */
 void reverse_array(int *a, int n)
 {
-	int i;
+	int index;
+	int temp;
 
-	int b = n - 1;
-
-	int c;
-
-	i = b;
-	while (i >= 0)
+	for (index = 0; index < n / 2; index++)
 	{
-		if (i != b)
-		{
-			_putchar(',');
-			_putchar(' ');
-		}
-		c = a[i];
-		if (c > 10 && c < 99)
-		{
-			_putchar((c / 10) + '0');
-		}
-		if (c > 99 && c < 999)
-		{
-			_putchar(((c / 10) / 10) + '0');
-			_putchar(((c / 10) % 10) + '0');
-		}
-		if (c > 999)
-		{
-			_putchar((((c / 10) / 10) / 10) + '0');
-			_putchar((((c / 10) / 10) % 10) + '0');
-			_putchar(((c / 10) % 10) + '0');
-		}
-		_putchar((c % 10) + '0');
-		i--;
+		temp = a[index];
+		a[index] = a[n - index - 1];
+		a[n - index - 1] = temp;
 	}
 }
