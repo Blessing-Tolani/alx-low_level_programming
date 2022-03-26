@@ -1,23 +1,20 @@
 #include "main.h"
 /**
- * _strcat - return concatenated strings
- * @dest: destination string
- * @src: source string
- *
- * Return: string
+ * print_number - Prints an integer
+ * @n: The integer to be printed
  */
-char *_strcat(char *dest, char *src)
+void print_number(int n)
 {
-	int a = 0;
-	int b = 0;
+	unsigned int num = n;
 
-	while (dest[a] != '\0')
-		a++;
-	while (src[b] != '\0')
+	if (n < 0)
 	{
-		dest[a] = src[b];
-		b++;
-		a++;
+		_putchar('-');
+		num = -num;
 	}
-	return (dest);
+
+	if ((num / 10) > 0)
+		print_number(num / 10);
+
+	_putchar((num % 10) + '0');
 }
