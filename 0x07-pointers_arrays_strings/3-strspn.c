@@ -1,22 +1,33 @@
 #include "main.h"
 
 /**
- * _memset - copies byte b to memory
- * @s: memory area
- * @b: byte
- * @n: no of bytes to replace
+ * _strspn - count accept in s and return the length
+ * @s: string
+ * @accept: short string
  * 
- * Return: a pointer to memory area
+ * Return: length
  */
-char _memset(char *s, char b, unsigned int n)
+unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i;
+	int i;
+	int b;
 
 	i = 0;
-	while (i < n)
+	b = 0;
+	while (s[i])
 	{
-		s[i] = b;
+		int j;
+		
+		j = 0;
+		while (accept[j])
+		{
+			if (s[i] == accept[j])
+				b++;
+			else if (s[i] == ' ')
+				return (b);
+			j++;
+		}
 		i++:
 	}
-	return (s);
+	return (b);
 }
