@@ -1,22 +1,27 @@
 #include "main.h"
 
 /**
- * _memset - copies byte b to memory
- * @s: memory area
- * @b: byte
- * @n: no of bytes to replace
+ * __strpbrk - a function
+ * @s: first string
+ * @accept: second string
  * 
  * Return: a pointer to memory area
  */
-char _memset(char *s, char b, unsigned int n)
+char *_strpbrk(char *s, char *accept)
 {
-	unsigned int i;
-
+	int i, j;
+	
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		s[i] = b;
-		i++:
+		j = 0;
+		while (accept[j])
+		{
+			if (s[i] == accept[j])
+				return (s + i);
+			j++;
+		}
+		i++;
 	}
-	return (s);
+	return (0);
 }
