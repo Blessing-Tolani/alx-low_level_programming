@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * __strpbrk - a function
+ * _strpbrk - a function
  * @s: first string
  * @accept: second string
  * 
