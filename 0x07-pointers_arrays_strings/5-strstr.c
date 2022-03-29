@@ -4,22 +4,21 @@
  * _strpbrk - a function
  * @s: first string
  * @accept: second string
- * 
  * Return: a pointer to memory area
  */
-char *_strpbrk(char *s, char *accept)
+char *_strstr(char *haystack, char *needle)
 {
-	int i,j;
+	int i, j;
 	
 	i = 0;
-	while (s[i])
+	while (haystack[i] != '\0')
 	{
 		j = 0;
-		while (accept[j])
+		while (needle[j])
 		{
-			if (s[i] == accept[j])
+			if (haystack[i] == needle[j])
 			{
-				return (s + i);
+				return (needle);
 			}
 			j++;
 		}
