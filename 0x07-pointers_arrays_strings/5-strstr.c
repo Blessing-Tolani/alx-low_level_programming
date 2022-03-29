@@ -1,14 +1,16 @@
 #include "main.h"
+
 /**
  * _strpbrk - a function
  * @s: first string
  * @accept: second string
+ * 
  * Return: a pointer to memory area
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int i, j;
-
+	int i,j;
+	
 	i = 0;
 	while (s[i])
 	{
@@ -24,4 +26,3 @@ char *_strpbrk(char *s, char *accept)
 		i++;
 	}
 	return (0);
-}
