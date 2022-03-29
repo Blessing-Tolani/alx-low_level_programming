@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _strpbrk - a function
- * @s: first string
- * @accept: second string
+ * _strstr - a function
+ * @haystack: first string
+ * @needle: second string
  * Return: a pointer to memory area
  */
 char *_strstr(char *haystack, char *needle)
