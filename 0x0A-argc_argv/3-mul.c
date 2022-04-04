@@ -8,9 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int count;
-
-	unsigned int sum = 1;
+	int count, sum = 1;
 
 	if (argc > 1)
 	{
@@ -23,6 +21,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		printf("Error\n");
+		(void)argv;
 		return (1);
 	}
 	return (0);
