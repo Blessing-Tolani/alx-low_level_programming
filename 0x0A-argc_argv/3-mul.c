@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
 	int count, sum = 1;
 
-	if (argc > 1)
+	if (argc > 2)
 	{
 		for (count = 1; count < argc; count++)
 		{
@@ -21,7 +21,6 @@ int main(int argc, char *argv[])
 	else
 	{
 		printf("Error\n");
-		(void)argv;
 		return (1);
 	}
 	return (0);
