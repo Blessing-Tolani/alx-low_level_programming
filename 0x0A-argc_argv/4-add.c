@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 /**
  * main - prints name
  * @argc: argument count
@@ -10,20 +11,26 @@ int main(int argc, char *argv[])
 {
 	int count;
 
-	int sum = 1;
+	int sum = 0;
 
-	if (argc > 1)
+	if (argc <= 2)
+	{
+		printf("0\n");
+		return (0);
+	}	
+	else
 	{
 		for (count = 1; count < argc; count++)
 		{
-			sum *= atoi(argv[count]);
+			if (isdigit(*argv[count]))
+				sum += atoi(argv[count]);
+			else
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
 		printf("%d\n", sum);
-	}
-	else
-	{
-		printf("Error\n");
-		return (1);
 	}
 	return (0);
 }
