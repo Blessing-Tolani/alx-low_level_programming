@@ -1,47 +1,18 @@
 #include "main.h"
 #include <stdlib.h>
 
-char *_strcpy(char *dest, char *src);
-
 /**
- * _strdup - Function that returns a pointer to a new string
- * @str: String
- * Return: Pointer to a new string
+ * free_grid - Frees a two dimensional grid
+ * @grid: Two dimensional array of integers
+ * @height: Integer height of the grid
  */
-char *_strdup(char *str)
+void free_grid(int **grid, int height)
 {
-	char *dupli, *copy;
-	int len = 0;
+	int i;
 
-	if (str == NULL)
-		return (NULL);
-	for (copy = str; *copy != '\0'; copy++)
-		len++;
-	dupli = malloc(len + 1);
-	if (dupli == NULL)
-		return (NULL);
-	_strcpy(dupli, str);
-	return (dupli);
-}
-
-/**
- * *_strcpy - copy the pointed string
- * @dest: pointer of a char[] variable
- * @src: sames as dest
- * Return: copy of the pointer char
- */
-char *_strcpy(char *dest, char *src)
-{
-	int counter = 0;
-
-	while (*src != '\0')
+	for (i = 0; i < height; i++)
 	{
-		*dest = *src;
-		dest++;
-		src++;
-		counter++;
+		free(grid[i]);
 	}
-	*dest = '\0';
-	dest -= counter;
-	return (dest);
+	free(grid);
 }
