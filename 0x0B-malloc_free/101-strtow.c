@@ -1,47 +1,66 @@
 #include "main.h"
 #include <stdlib.h>
 
-char *_strcpy(char *dest, char *src);
+int w_count(char *str, int size);
+int _strlen_recursion(char *s);
 
 /**
- * _strdup - Function that returns a pointer to a new string
+ * **strtow - Splits a string in two words
  * @str: String
- * Return: Pointer to a new string
+ * Return: Pointer to an array of strings
  */
-char *_strdup(char *str)
+char **strtow(char *str)
 {
-	char *dupli, *copy;
-	int len = 0;
+	char *strcp, **strcon;
+	int len = 0, noWords;
 
-	if (str == NULL)
+	if (str == NULL || str[0] == 0)
 		return (NULL);
-	for (copy = str; *copy != '\0'; copy++)
-		len++;
-	dupli = malloc(len + 1);
-	if (dupli == NULL)
+
+	strcp = str;
+	len = _strlen_recursion(strcp);
+	noWords = w_count(str, len);
+
+	if (noWords < 1)
 		return (NULL);
-	_strcpy(dupli, str);
-	return (dupli);
+
+	strcon = malloc(noWords + 1 * sizeof(char *));
+
+	strcon[0] = malloc(sizeof(char) * 1 + 1);
+
+	return (strcon);
 }
 
 /**
- * *_strcpy - copy the pointed string
- * @dest: pointer of a char[] variable
- * @src: sames as dest
- * Return: copy of the pointer char
+ * w_count - Count the total words in a string
+ * @str: String
+ * @size: length of the string
+ * Return: Count of words Integer
  */
-char *_strcpy(char *dest, char *src)
+int w_count(char *str, int size)
 {
-	int counter = 0;
+	int i, count = 0;
 
-	while (*src != '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		*dest = *src;
-		dest++;
-		src++;
-		counter++;
+		if (str[i] != ' ')
+		{
+			while (i < size && str[i] != ' ')
+				i++;
+			count++;
+		}
 	}
-	*dest = '\0';
-	dest -= counter;
-	return (dest);
+
+	return (count);
+}
+/**
+ * _strlen_recursion - Length of a string
+ * @s: char pointer
+ * Return: Integer variable
+ */
+int _strlen_recursion(char *s)
+{
+	if (*s != '\0')
+		return (1 + _strlen_recursion(s + 1));
+	return (0);
 }
