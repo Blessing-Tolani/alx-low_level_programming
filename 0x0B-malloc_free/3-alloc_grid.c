@@ -1,47 +1,49 @@
 #include "main.h"
 #include <stdlib.h>
 
-char *_strcpy(char *dest, char *src);
-
 /**
- * _strdup - Function that returns a pointer to a new string
- * @str: String
- * Return: Pointer to a new string
+ * **alloc_grid - Pointer to a 2 dimensionar array of integers
+ * @width: Integer width of the matrix
+ * @height: Integer height  of the matrix
+ * Return: Two dimensional array
  */
-char *_strdup(char *str)
+int **alloc_grid(int width, int height)
 {
-	char *dupli, *copy;
-	int len = 0;
 
-	if (str == NULL)
+	int **ptr;
+	int i, j;
+
+	if (width < 1 || height < 1)
 		return (NULL);
-	for (copy = str; *copy != '\0'; copy++)
-		len++;
-	dupli = malloc(len + 1);
-	if (dupli == NULL)
+
+	ptr = (int **) malloc(height * (sizeof(int *)));
+	if (ptr == NULL)
 		return (NULL);
-	_strcpy(dupli, str);
-	return (dupli);
-}
-
-/**
- * *_strcpy - copy the pointed string
- * @dest: pointer of a char[] variable
- * @src: sames as dest
- * Return: copy of the pointer char
- */
-char *_strcpy(char *dest, char *src)
-{
-	int counter = 0;
-
-	while (*src != '\0')
+	for (i = 0; i < height; i++)
 	{
-		*dest = *src;
-		dest++;
-		src++;
-		counter++;
+		ptr[i] = (int *) malloc(width * sizeof(int));
+
+		if (ptr[i] == NULL)
+		{
+			for (i--; i >= 0; i--)
+				free(ptr[i]);
+			free(ptr);
+			return (NULL);
+		}
 	}
-	*dest = '\0';
-	dest -= counter;
-	return (dest);
+
+	if (*ptr == NULL)
+	{
+		free(ptr);
+		return (NULL);
+	}
+
+	for (i = 0; i < height; i++)
+	{
+		for (j = 0; j < width; j++)
+		{
+			ptr[i][j] = 0;
+		}
+	}
+	return (ptr);
 }
