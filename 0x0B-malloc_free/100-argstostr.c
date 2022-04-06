@@ -1,47 +1,56 @@
 #include "main.h"
 #include <stdlib.h>
 
-char *_strcpy(char *dest, char *src);
+
+int _strlen_recursion(char *s);
 
 /**
- * _strdup - Function that returns a pointer to a new string
- * @str: String
- * Return: Pointer to a new string
+ * *argstostr - Concatenates all the arguments of
+ * your program
+ * @ac: Integer size of av
+ * @av: Array of strings
+ * Return: String
  */
-char *_strdup(char *str)
+char *argstostr(int ac, char **av)
 {
-	char *dupli, *copy;
-	int len = 0;
+	char *str, **cpav;
+	int i, len = 0, j = 0, k = 0;
 
+	cpav = av;
+
+	if (ac == 0 || av == NULL)
+		return (NULL);
+
+	for (i = 0; i < ac; i++)
+		len += _strlen_recursion(cpav[i]);
+
+	str = (char *) malloc(sizeof(char) * len + ac + 1);
 	if (str == NULL)
 		return (NULL);
-	for (copy = str; *copy != '\0'; copy++)
-		len++;
-	dupli = malloc(len + 1);
-	if (dupli == NULL)
-		return (NULL);
-	_strcpy(dupli, str);
-	return (dupli);
+
+	for (i = 0; i < ac; i++)
+	{
+		k = 0;
+		while (av[i][k] != '\0')
+		{
+			str[j] = av[i][k];
+			k++;
+			j++;
+		}
+		str[j++] = '\n';
+	}
+
+	return (str);
 }
 
 /**
- * *_strcpy - copy the pointed string
- * @dest: pointer of a char[] variable
- * @src: sames as dest
- * Return: copy of the pointer char
+ * _strlen_recursion - Length of a string
+ * @s: char pointer
+ * Return: Integer variable
  */
-char *_strcpy(char *dest, char *src)
+int _strlen_recursion(char *s)
 {
-	int counter = 0;
-
-	while (*src != '\0')
-	{
-		*dest = *src;
-		dest++;
-		src++;
-		counter++;
-	}
-	*dest = '\0';
-	dest -= counter;
-	return (dest);
+	if (*s != '\0')
+		return (1 + _strlen_recursion(++s));
+	return (0);
 }
