@@ -9,28 +9,44 @@
  */
 int main(int argc, char *argv[])
 {
-	int count;
+	int coins[5] = {25, 10, 5, 2, 1};
+	int ans = 0, value, coin, i;
 
-	int sum = 0;
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
 
-	if (argc <= 2)
+	value = atoi(argv[1]);
+
+	if (value < 0)
 	{
 		printf("0\n");
 		return (0);
 	}
-	else
+
+	while (value)
 	{
-		for (count = 1; count < argc; count++)
+		coin = 0;
+		for (i = 0; i < 5; i++)
 		{
-			if (isdigit(*argv[count]))
-				sum += atoi(argv[count]);
+			if (value < coins[i])
+			{
+				continue;
+			}
 			else
 			{
-				printf("Error\n");
-				return (1);
+				coin = coins[i];
+				break;
 			}
 		}
-		printf("%d\n", sum);
+
+		ans +=	value / coin;
+		value %= coin;
 	}
+
+	printf("%d\n", ans);
+
 	return (0);
 }
