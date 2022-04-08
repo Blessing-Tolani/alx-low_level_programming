@@ -1,22 +1,22 @@
 #include "main.h"
-#include <stdlib.h>
-/**
- * *create_array - Function that createss arrays of chars
- * @size: Size of the char
- * @c: char to be initialized
- * Return: Array of chars
- */
-char *create_array(unsigned int size, char c)
-{
-	char *ptc;
-	unsigned int i;
 
-	if (size == 0)
-		return (NULL);
-	ptc = (char *) malloc(size * (sizeof(char)));
-	if (ptc == NULL)
-		return (NULL);
-	for (i = 0; i < size; i++)
-		ptc[i] = c;
-	return (ptc);
+/**
+ * array_range - creates an array of integers
+ * @min: minimum
+ * @max: maximum
+ * Return: array
+ */
+int *array_range(int min, int max)
+{
+	int *arr, i = 0, t = min;
+
+	if (min > max)
+		return (0);
+	arr = malloc((max - min + 1) * sizeof(int));
+
+	if (!arr)
+		return (0);
+	while (i <= max - min)
+		arr[i++] = t++;
+	return (arr);
 }
