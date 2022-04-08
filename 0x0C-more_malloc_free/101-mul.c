@@ -1,23 +1,29 @@
-
 #include "main.h"
-#include <stdlib.h>
-/**
- * *create_array - Function that createss arrays of chars
- * @size: Size of the char
- * @c: char to be initialized
- * Return: Array of chars
- */
-char *create_array(unsigned int size, char c)
-{
-	char *ptc;
-	unsigned int i;
 
-	if (size == 0)
-		return (NULL);
-	ptc = (char *) malloc(size * (sizeof(char)));
-	if (ptc == NULL)
-		return (NULL);
-	for (i = 0; i < size; i++)
-		ptc[i] = c;
-	return (ptc);
+/**
+ * main - multiplies two positive numbers
+ * @argc: n arguments
+ * @argv: args
+ * Return: int
+ */
+int main(int argc, char *argv[])
+{
+unsigned long mul;
+int i, j;
+	if (argc != 3)
+	{ printf("Error\n");
+	exit(98); }
+	for (i = 1; i < argc; i++)
+	{
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (argv[i][j] > 57 || argv[i][j] < 48)
+			{  printf("Error\n");
+			exit(98); }
+		}
+
+	}
+	mul = atol(argv[1]) *  atol(argv[2]);
+	printf("%lu\n", mul);
+return (0);
 }
