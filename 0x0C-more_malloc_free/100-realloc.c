@@ -1,23 +1,33 @@
-
 #include "main.h"
-#include <stdlib.h>
+
 /**
- * *create_array - Function that createss arrays of chars
- * @size: Size of the char
- * @c: char to be initialized
- * Return: Array of chars
+ * _realloc -  reallocates a memory block using malloc and free
+ * @ptr: pointer
+ * @old_size: old size
+ * @new_size: new size
+ * Return: pointer
  */
-char *create_array(unsigned int size, char c)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char *ptc;
+	char *clone, *relloc;
 	unsigned int i;
 
-	if (size == 0)
-		return (NULL);
-	ptc = (char *) malloc(size * (sizeof(char)));
-	if (ptc == NULL)
-		return (NULL);
-	for (i = 0; i < size; i++)
-		ptc[i] = c;
-	return (ptc);
+	if (ptr != NULL)
+	clone = ptr;
+	else
+	{ return (malloc(new_size)); }
+	if (new_size == old_size)
+	return (ptr);
+	if (new_size == 0 && ptr != NULL)
+	{ free(ptr);
+	return (0); }
+	relloc = malloc(new_size);
+	if (relloc == NULL)
+	return (0);
+	for (i = 0; i < (old_size || i < new_size); i++)
+	{
+		*(relloc + i) = clone[i];
+	}
+	free(ptr);
+return (relloc);
 }
