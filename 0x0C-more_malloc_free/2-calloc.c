@@ -1,22 +1,39 @@
 #include "main.h"
-#include <stdlib.h>
+
 /**
- * *create_array - Function that createss arrays of chars
- * @size: Size of the char
- * @c: char to be initialized
- * Return: Array of chars
+ * _memset - copy char
+ * @s: string
+ * @b: input
+ * @n: bytes
+ * Return: string
  */
-char *create_array(unsigned int size, char c)
+char *_memset(char *s, char b, unsigned int n)
 {
-	char *ptc;
 	unsigned int i;
 
-	if (size == 0)
+	for (i = 0; i < n; i++)
+	{
+		s[i] = b;
+	}
+	return (s);
+}
+
+/**
+ * _calloc - allocates memory for an array using malloc
+ * @nmemb: n elements
+ * @size: bytes
+ * Return: pointer
+ */
+void *_calloc(unsigned int nmemb, unsigned int size)
+{
+	void *p;
+
+	if (nmemb == 0 || size == 0)
 		return (NULL);
-	ptc = (char *) malloc(size * (sizeof(char)));
-	if (ptc == NULL)
+	p = malloc(nmemb * size);
+
+	if (p == NULL)
 		return (NULL);
-	for (i = 0; i < size; i++)
-		ptc[i] = c;
-	return (ptc);
+	_memset(p, 0, (nmemb * size));
+	return (p);
 }
