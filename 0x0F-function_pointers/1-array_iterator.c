@@ -7,13 +7,15 @@
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	size_t i;
-	
-	if (array && action)
-	{
-		for (i = 0; i < size; i++)
-			action(array[i]);
-	}
-	else
+	int *myarray;
+	unsigned long i;
+
+	if (array == NULL || action == NULL)
 		return;
+	myarray = array;
+
+	for (i = 0; i < size; i++)
+	{
+		action(myarray[i]);
+	}
 }
