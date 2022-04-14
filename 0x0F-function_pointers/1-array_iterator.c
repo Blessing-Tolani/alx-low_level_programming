@@ -8,8 +8,15 @@
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
 
+	int *myarray;
 	unsigned long i;
 
+	if (array == NULL || action == NULL)
+		return;
+	myarray = array;
+
 	for (i = 0; i < size; i++)
-		action(array[i]);
+	{
+		action(myarray[i]);
+	}
 }
