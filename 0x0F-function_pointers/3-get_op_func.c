@@ -1,18 +1,34 @@
-#include "function_pointers.h"
-/**
- * array_iterator - execute a funtion on each element of an array
- * @array: array
- * @size: size of array
- * @action: function pointer
- */
-void array_iterator(int *array, size_t size, void (*action)(int))
-{
-	unsigned long i;
+#include "3-calc.h"
+#include <string.h>
 
-	if (array == NULL || action == NULL)
-		return;
-	for (i = 0; i < size; i++)
+/**
+ * *get_op_func - Select the correct function to perform
+ * the operation given
+ * @s: String given
+ *
+ * Return: Return a function pointer of which returns an integer
+ */
+int (*get_op_func(char *s))(int, int)
+{
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+	};
+	int i = 0;
+
+	while (i <= 4)
 	{
-		action(array[i]);
+		if (!strcmp(ops[i].op, s))
+		{
+			return (ops[i].f);
+		}
+		i++;
 	}
+
+	return (NULL);
+
 }
