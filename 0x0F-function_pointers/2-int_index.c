@@ -8,15 +8,21 @@
  */
 int int_index(int *array, size_t size, void (*cmp)(int))
 {
-	unsigned long i;
+	int *myarray = array, i, ans;
 
-	if (size > 0 && array != NULL && cmp != NULL)
+	if (size <=  0)
+		return (-1);
+
+	if (array == NULL || cmp == NULL)
+		return (-1);
+
+	for (i = 0; i < size; i++)
 	{
-		for (i = 0; i < size; i++)
-		{
-			if (cmp(array[i]) != 0)
-				return (i);
-		}
+		ans = cmp(myarray[i]);
+
+		if (ans)
+			return (i);
 	}
+
 	return (-1);
 }
