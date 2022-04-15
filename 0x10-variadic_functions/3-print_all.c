@@ -46,7 +46,7 @@ void print_float(va_list args)
  * @format: formats of arg
  */
 
-typedef struct type_var
+typedef struct types
 {
 char type;
 void (*f)(va_list);
@@ -54,7 +54,7 @@ void (*f)(va_list);
 
 void print_all(const char * const format, ...)
 {
-	types_t type_var[] = {
+	types_t types[] = {
 	{'c', print_char},
 	{'i', print_int},
 	{'f', print_float},
