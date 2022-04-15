@@ -46,7 +46,7 @@ void print_float(va_list args)
  * @format: formats of arg
  */
 
-typedef struct types
+typedef struct type_var
 {
 char type;
 void (*f)(va_list);
@@ -54,33 +54,38 @@ void (*f)(va_list);
 
 void print_all(const char * const format, ...)
 {
-	types_t types[] = {
+	int i;
+	int j;
+	char *space = "";
+
+	va_list params;
+
+	types_t type_var[] = {
 	{'c', print_char},
 	{'i', print_int},
 	{'f', print_float},
 	{'s', print_string},
 	{'\0', NULL}
 	};
-	va_list args;
-	char *sep1 = "", *sep2 = ", ";
-	int count1 = 0, count2 = 0;
 
-	va_start(args, format);
-	while (format !=  NULL && format[count1] != '\0')
+	va_start(params, format);
+
+	j = 0;
+	while (format != NULL && format[j] != '\0')
 	{
-		count2 = 0;
-		while (types[count2].z != '\0')
+		i = 0;
+		while (type_var[i].type != '\0')
 		{
-			if (format[count1] == types[count2].z)
+			if (type_var[i].type == format[j])
 			{
-				printf("%s", sep1);
-				types[count2].f(args);
-				sep1 = sep2;
+				printf("%s", space);
+				type_var[i].f(params);
+				space = ", ";
 			}
-			count2++;
+			i++;
 		}
-		count1++;
+		j++;
 	}
+	va_end(params);
 	printf("\n");
-	va_end(args);
 }
