@@ -14,7 +14,7 @@ list_t *add_node(list_t **head, const char *str)
 	if (new == NULL)
 	{
 		printf("Error\n");
-		return (1);
+		return (NULL);
 	}
 	new->str = strdup(str);
 	for (count = 0; str[count] != '\0'; count++)
