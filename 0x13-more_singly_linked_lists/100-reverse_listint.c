@@ -1,26 +1,24 @@
-
 #include "lists.h"
 /**
- * add_node - adds a new node at the beginning of the list
- * @head: pointer  to the beginning
- * @str: str to be duplicated
- * Return: address of the new element or null
+ * reverse_listint - Reverse a linked list
+ * @head: Pointer of the pointer of the head of the list
+ *
+ * Return: Pointer to the first node of the reversed list
  */
-list_t *add_node(list_t **head, const char *str)
+listint_t *reverse_listint(listint_t **head)
 {
-	list_t *new;
-	int count = 0;
+	listint_t *prev = NULL;
+	listint_t *next = NULL;
 
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
+	while (*head != NULL)
 	{
-		printf("Error\n");
-		return (NULL);
+		next = (*head)->next; /* Store next */
+		(*head)->next = prev; /* Rev current node pointer */
+		prev = (*head); /* Move pointer one position ahead */
+		(*head) = next;
 	}
-	new->str = strdup(str);
-	for (count = 0; str[count] != '\0'; count++)
-		;
-	new->len = count;
-	new->next = *head;
-	*head = new;
+
+	(*head) = prev;
+
 	return (*head);
+}
