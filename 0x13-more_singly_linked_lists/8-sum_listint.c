@@ -1,25 +1,23 @@
 #include "lists.h"
 /**
- * add_node - adds a new node at the beginning of the list
- * @head: pointer  to the beginning
- * @str: str to be duplicated
- * Return: address of the new element or null
+ * sum_listint - Sum the data of the list
+ * @head: Head of the linked list
+ *
+ * Return: sum of all the data (int)
  */
-list_t *add_node(list_t **head, const char *str)
+int sum_listint(listint_t *head)
 {
-	list_t *new;
-	int count = 0;
+	listint_t *t = head;
+	int ans = 0;
 
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
+	if (t == NULL)
+		return (ans);
+
+	while (t != NULL)
 	{
-		printf("Error\n");
-		return (NULL);
+		ans += t->n;
+		t = t->next;
 	}
-	new->str = strdup(str);
-	for (count = 0; str[count] != '\0'; count++)
-		;
-	new->len = count;
-	new->next = *head;
-	*head = new;
-	return (*head);
+
+	return (ans);
+}
