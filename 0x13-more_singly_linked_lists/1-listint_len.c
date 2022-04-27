@@ -1,25 +1,19 @@
 #include "lists.h"
 /**
- * add_node - adds a new node at the beginning of the list
- * @head: pointer  to the beginning
- * @str: str to be duplicated
- * Return: address of the new element or null
+ * listint_len - Count number of elements in the list
+ * @h: Head of the linked list
+ *
+ * Return: Number of nodes (size_t)
  */
-list_t *add_node(list_t **head, const char *str)
+size_t listint_len(const listint_t *h)
 {
-	list_t *new;
-	int count = 0;
+	size_t i = 0;
 
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
+	while (h != NULL)
 	{
-		printf("Error\n");
-		return (NULL);
+		h = h->next;
+		i++;
 	}
-	new->str = strdup(str);
-	for (count = 0; str[count] != '\0'; count++)
-		;
-	new->len = count;
-	new->next = *head;
-	*head = new;
-	return (*head);
+
+	return (i);
+}
