@@ -1,25 +1,46 @@
 #include "lists.h"
 /**
- * add_node - adds a new node at the beginning of the list
- * @head: pointer  to the beginning
- * @str: str to be duplicated
- * Return: address of the new element or null
+ * insert_nodeint_at_index - Insert a new node in the given index
+ * @head: Memory address of the head list
+ * @idx: Index of the list
+ * @n: New data (int)
+ *
+ * Return: the address of the new node, or NULL if it failed
  */
-list_t *add_node(list_t **head, const char *str)
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	list_t *new;
-	int count = 0;
+	listint_t *t;
+	listint_t *h = *head;
+	unsigned int i = 0;
 
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
-	{
-		printf("Error\n");
+	if (*head == NULL && idx > 0)
 		return (NULL);
+
+	t = malloc(sizeof(listint_t));
+	if (t == NULL)
+		return (NULL);
+	/* Head insertion case */
+	if (idx == 0)
+	{
+		t->n = n;
+		t->next = *head;
+		*head = t;
+		return (t);
 	}
-	new->str = strdup(str);
-	for (count = 0; str[count] != '\0'; count++)
-		;
-	new->len = count;
-	new->next = *head;
-	*head = new;
-	return (*head);
+	/* All other cases */
+	while (h != NULL)
+	{
+		if (i == idx - 1)
+		{
+			t->n = n;
+			t->next = h->next;
+			h->next = t;
+			return (t);
+		}
+		i++;
+		h = h->next;
+	}
+
+	free(t);
+	return (NULL);
+}
