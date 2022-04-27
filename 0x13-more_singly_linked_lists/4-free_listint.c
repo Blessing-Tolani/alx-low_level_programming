@@ -1,26 +1,18 @@
-
 #include "lists.h"
 /**
- * add_node - adds a new node at the beginning of the list
- * @head: pointer  to the beginning
- * @str: str to be duplicated
- * Return: address of the new element or null
+ * free_listint - Free the list
+ * @head: Head of the list
+ *
+ * Return: nothing
  */
-list_t *add_node(list_t **head, const char *str)
+void free_listint(listint_t *head)
 {
-	list_t *new;
-	int count = 0;
+	listint_t *temp;
 
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
+	while (head != NULL)
 	{
-		printf("Error\n");
-		return (NULL);
+		temp = head;
+		head = head->next;
+		free(temp);
 	}
-	new->str = strdup(str);
-	for (count = 0; str[count] != '\0'; count++)
-		;
-	new->len = count;
-	new->next = *head;
-	*head = new;
-	return (*head);
+}
