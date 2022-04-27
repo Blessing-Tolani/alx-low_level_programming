@@ -1,25 +1,23 @@
 #include "lists.h"
 /**
- * add_node - adds a new node at the beginning of the list
- * @head: pointer  to the beginning
- * @str: str to be duplicated
- * Return: address of the new element or null
+ * get_nodeint_at_index - Get the nth node of the list
+ * @head: Head of the list
+ * @index: Index of the list, starting with 0
+ *
+ * Return: Node in the current index
  */
-list_t *add_node(list_t **head, const char *str)
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	list_t *new;
-	int count = 0;
+	listint_t *h = head;
+	unsigned int i = 0;
 
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
+	while (h != NULL)
 	{
-		printf("Error\n");
-		return (NULL);
+		if (i == index)
+			return (h);
+		i++;
+		h = h->next;
 	}
-	new->str = strdup(str);
-	for (count = 0; str[count] != '\0'; count++)
-		;
-	new->len = count;
-	new->next = *head;
-	*head = new;
-	return (*head);
+
+	return (NULL);
+}
