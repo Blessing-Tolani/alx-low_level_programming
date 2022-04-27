@@ -1,25 +1,21 @@
 #include "lists.h"
 /**
- * add_node - adds a new node at the beginning of the list
- * @head: pointer  to the beginning
- * @str: str to be duplicated
- * Return: address of the new element or null
+ * pop_listint - Deletes the head node of a linked list
+ * @head: Memory address of the head of the list
+ *
+ * Return: Data of the head deleted
  */
-list_t *add_node(list_t **head, const char *str)
+int pop_listint(listint_t **head)
 {
-	list_t *new;
-	int count = 0;
+	listint_t *temp;
+	int n;
 
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
-	{
-		printf("Error\n");
-		return (NULL);
-	}
-	new->str = strdup(str);
-	for (count = 0; str[count] != '\0'; count++)
-		;
-	new->len = count;
-	new->next = *head;
-	*head = new;
-	return (*head);
+	if (*head == NULL)
+		return (0);
+
+	temp = *head;
+	n = temp->n;
+	*head = temp->next;
+	free(temp);
+	return (n);
+}
