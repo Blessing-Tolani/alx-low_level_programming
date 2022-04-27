@@ -1,25 +1,41 @@
 #include "lists.h"
+#include <stdio.h>
 /**
- * add_node - adds a new node at the beginning of the list
- * @head: pointer  to the beginning
- * @str: str to be duplicated
- * Return: address of the new element or null
+ * delete_nodeint_at_index - Deletes the node at given index of a list
+ * @head: Memory address of the linked list
+ * @index: Index of the list to search
+ *
+ * Return: 1 on success, -1 on failure
  */
-list_t *add_node(list_t **head, const char *str)
+int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	list_t *new;
-	int count = 0;
+	listint_t *temp = *head;
+	listint_t *previous;
+	unsigned int i = 0;
 
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
+
+	if (*head == NULL)
+		return (-1);
+
+	if (index == 0)
 	{
-		printf("Error\n");
-		return (NULL);
+		*head = temp->next; /* Change the head */
+		free(temp); /* Free the old head */
+		return (1);
 	}
-	new->str = strdup(str);
-	for (count = 0; str[count] != '\0'; count++)
-		;
-	new->len = count;
-	new->next = *head;
-	*head = new;
-	return (*head);
+	while (temp != NULL && i != index)
+	{
+		previous = temp; /* Save the previous node */
+		temp = temp->next; /* Save the next node */
+		i++;
+	}
+	/* If the given key doesn't found */
+	if (temp == NULL)
+		return (-1);
+	/* Unlink the node from the list */
+	previous->next = temp->next;
+	free(temp);
+
+	return (1);
+
+}
